@@ -16,4 +16,15 @@ class TestCar < Minitest::Test
     assert_equal(0, @car.speed)
   end
 
+  def test_acceleration
+    car=Car.new("brown","Ford",100,0)
+    assert_equal(95,@car.fuel)
+    assert_equal(10,@car.speed)
+  end
+
+  def test_brake()
+    car=Car.new("brown","Ford",100,20)
+    assert_equal(0,@car.speed)
+  end
+
 end
