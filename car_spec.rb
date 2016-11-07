@@ -4,17 +4,16 @@ require_relative('car')
 
 class TestCar < Minitest::Test
 
-  def setup
-    @colour=Colour.new("brown")
-    @model=Model.new("Ford")
-    @fuel=Fuel.new(100)
-    @speed=Speed.new(0)
-
-    car=[@colour,@model,@fuel,@speed]
-
-    @car_details=Car.new(car)
+  def setup()
+    @car=Car.new("brown","Ford",100,0)
+  end  
+  
+  def test_car_fuel
+    assert_equal(100, @car.fuel)
   end
 
-  
+  def test_car_speed
+    assert_equal(0, @car.speed)
+  end
 
 end
